@@ -11,7 +11,7 @@ const search = async function (bookSearch) {
   document.querySelector(".results").innerHTML = "";
 
   const result = await fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=${bookSearch}&key=AIzaSyDQR-0Xou8x6zr0-4e0X6q3jqBDyBdWfC8`
+    `https://www.googleapis.com/books/v1/volumes?q=${bookSearch}&maxResults=40&key=AIzaSyDQR-0Xou8x6zr0-4e0X6q3jqBDyBdWfC8`
   );
   const data = await result.json();
 
