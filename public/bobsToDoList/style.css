@@ -1,0 +1,43 @@
+html,
+body {
+  margin: 0px;
+}
+body {
+  background-color: black;
+}
+main {
+  /* background-color: rgb(55, 57, 57); */
+  width: 50%;
+  margin: auto;
+  padding: 20px 50px 20px 50px;
+}
+.icon {
+  width: 100px;
+  border-radius: 10%;
+  margin: 5px;
+}
+.item-name {
+  margin: 0px;
+}
+.item {
+  padding-left: 40px;
+  margin: 0px;
+}
+.high-priority {
+  background-color: rgb(225, 0, 0);
+}
+.mid-priority {
+  background-color: rgb(240, 156, 0);
+}
+.low-priority {
+  background-color: rgb(255, 255, 169);
+}
+.small-text {
+  font-size: x-small;
+}
+.form-btn:hover {
+  background-color: red;
+}
+.sort-btn:hover {
+  background-color: grey;
+}
