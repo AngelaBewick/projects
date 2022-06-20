@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TO DO:</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-primary sticky-top">
+      <img class="icon" src="./images/quinlan.jfif" />
+      <h1>
+        BOB'S
+        <button
+        id="modal-open"
+          class="btn btn-secondary font-weight-bold form-btn"
+          data-toggle="modal"
+          data-target="#modal-form"
+        >
+          <h1>TO DO</h1>
+        </button>
+        LIST
+      </h1>
+
+      <ul class="nav nav-pills btn-group">
+        <li class="nav-item dropdown sort-btn">
+          <button
+            class="nav-link dropdown-toggle bg-transparent"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Priority
+          </button>
+          <div class="dropdown-menu">
+            <button id="high" class="dropdown-item" >high to low</button>
+            <button id="low" class="dropdown-item" >low to high</button>
+          </div>
+        </li>
+        <li class="nav-item sort-btn">
+          <button id="type" class="nav-link bg-transparent"  role="button">
+            Type
+          </button>
+        </li>
+        <li class="nav-item dropdown sort-btn">
+          <button 
+            class="nav-link dropdown-toggle bg-transparent"
+            data-toggle="dropdown"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Date
+          </button>
+          <div class="dropdown-menu">
+            <button id="dateNew" class="dropdown-item" >newest first</button>
+            <button id="dateOld" class="dropdown-item" >oldest first</button>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <div
+      class="modal fade"
+      id="modal-form"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel">Add New To-Do</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form>
+          <div class="modal-body">
+              <input
+              id="item-description"
+                class="form-control form-control-lg"
+                type="text"
+                placeholder="My to-do item:"
+              />
+              <select id="item-type" class="form-control">
+                <option id="select-default" disabled selected>Select Type:</option>
+                <option>car</option>
+                <option>pets</option>
+                <option>family</option>
+                <option>friends</option>
+                <option>health</option>
+                <option>home</option>
+                <option>job</option>
+                <option>other</option>
+              </select>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="exampleRadios"
+                  id="high-priority"
+                  value="option1"
+                  checked
+                />
+                <label class="form-check-label" for="exampleRadios1">
+                  High Priority
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="exampleRadios"
+                  id="mid-priority"
+                  value="option2"
+                />
+                <label class="form-check-label" for="exampleRadios2">
+                  Medium Priority
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="exampleRadios"
+                  id="low-priority"
+                  value="option2"
+                />
+                <label class="form-check-label" for="exampleRadios2">
+                  Low Priority
+                </label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+              id="modal-close"
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              >
+              Close
+            </button>
+            <button id="modal-submit" type="submit" class="btn btn-primary">Add Item</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <main class="bg-dark">
+      <div>
+        <h2 class="font-weight-bold">TO DO:</h2>
+        <hr />
+      </div>
+      <div id="to-do" class="container">
+        <div class="row mb-3 ml-1">
+          <div class="list-item high-priority col col-sm-11" data-id="1">
+            <h5 class="item-name" data-name="car" >car:</h5>
+            
+            <p class="item">
+              get car checked (check engine light) <br /><span
+                class="small-text date"
+                >05.05.2022</span
+              >
+            </p>
+          </div>
+          <button data-name="remove" class="cancel btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+
+        <div class="row mb-3 ml-1">
+          <div class="list-item high-priority col col-sm-11" data-id="1">
+            <h5 class="item-name" data-name="pets">pets:</h5>
+            <p class="item">
+              take Baloo to the vet for puking and eyes <br /><span
+                class="small-text date"
+                >11.23.2021</span
+              >
+            </p>
+          </div>
+          <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+
+        <div class="row mb-3 ml-1">
+          <div class="list-item mid-priority col col-sm-11" data-id="2">
+            <h5 class="item-name" data-name="family">family:</h5>
+            <p class="item">
+              sort and upload dad's estate pictures and email dad for more info
+              on some <br /><span class="small-text date">06.14.2022</span>
+            </p>
+          </div>
+          <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+
+        <div class="row mb-3 ml-1">
+          <div class="list-item low-priority col col-sm-11" data-id="3">
+            <h5 class="item-name" data-name="family">family:</h5>
+            <p class="item">
+              take Paula and Kyle out for dinner <br /><span class="small-text date"
+                >06.14.2022</span
+              >
+            </p>
+          </div>
+          <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+
+        <div class="row mb-3 ml-1">
+          <div class="list-item low-priority col col-sm-11" data-id="3">
+            <h5 class="item-name" data-name="friends">friends:</h5>
+            <p class="item">
+              order the food for Wednesday dinner <br /><span class="small-text date"
+                >06.14.2022</span
+              >
+            </p>
+          </div>
+          <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+
+        <div class="row mb-3 ml-1">
+          <div class="list-item low-priority col col-sm-11" data-id="3">
+            <h5 class="item-name" data-name="health">health:</h5>
+            <p class="item">
+              make a meal plan and try new recipes (hello fresh or similar?)
+              <br /><span class="small-text date">06.14.2022</span>
+            </p>
+          </div>
+          <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+
+        <div class="row mb-3 ml-1">
+          <div class="list-item high-priority col col-sm-11" data-id="1">
+            <h5 class="item-name" data-name="health">health:</h5>
+            <p class="item">
+              start exercize routine <br /><span class="small-text date"
+                >06.14.2022</span
+              >
+            </p>
+          </div>
+          <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+
+        <div class="row mb-3 ml-1">
+          <div class="list-item mid-priority col col-sm-11" data-id="2">
+            <h5 class="item-name" data-name="home">home:</h5>
+            <p class="item">
+              look for places to live outside of Milwaukee <br /><span
+                class="small-text date"
+                >06.14.2022</span
+              >
+            </p>
+          </div>
+          <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+
+        <div class="row mb-3 ml-1">
+          <div class="list-item high-priority col col-sm-11" data-id="1">
+            <h5 class="item-name" data-name="job">job:</h5>
+            <p class="item">
+              get a job <br /><span class="small-text date">02.01.2022</span>
+            </p>
+          </div>
+          <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+
+        <div class="row mb-3 ml-1">
+          <div class="list-item low-priority col col-sm-11" data-id="3">
+            <h5 class="item-name" data-name="job">job:</h5>
+            <p class="item">
+              learn more about VR coding using C# and C++ <br /><span
+                class="small-text date"
+                >06.14.2022</span
+              >
+            </p>
+          </div>
+          <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+
+        <div class="row mb-3 ml-1">
+          <div class="list-item low-priority col col-sm-11" data-id="3">
+            <h5 class="item-name" data-name="other">other:</h5>
+            <p class="item">
+              get playstation and buy assassins creed games and maybe some
+              others
+              <br /><span class="small-text date">06.14.2022</span>
+            </p>
+          </div>
+          <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"
+  ></script>
+  <script defer type="module" src="./controller.js"></script>
+</html>
