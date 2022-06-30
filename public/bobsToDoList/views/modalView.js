@@ -1,3 +1,4 @@
+// const axios = require("axios");
 const description = document.querySelector("#item-description");
 const select = document.querySelector("#item-type");
 const radioHigh = document.querySelector("#high-priority");
@@ -36,6 +37,39 @@ const priority = function () {
   return priorityArr;
 };
 
+const saveItem = async function () {
+  // axios
+  //   .post("https://angela-bewicks-api.onrender.com", {
+  //     priority: `${priority()[0]}`,
+  //     date: `${currentDate()}`,
+  //     type: `${select.value}`,
+  //     description: `${description.value}`,
+  //   })
+  //   .then(function (response) {
+  //     console.log(response);
+  //   })
+  //   .catch(function (error) {
+  //     console.log(error);
+  //   });
+
+  const response = await fetch(
+    "https://angela-bewicks-api.onrender.com/api/v1",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json;charset=utf-8",
+      },
+      body: JSON.stringify({
+        priority: `${priority()[0]}`,
+        date: `${currentDate()}`,
+        type: `${select.value}`,
+        description: `${description.value}`,
+      }),
+    }
+  ).then((data) => {
+    console.log(data);
+  });
+};
 export const addItem = function () {
   mainContainer.insertAdjacentHTML(
     "afterbegin",
@@ -62,20 +96,29 @@ export const addItem = function () {
 
 modalSubmit.addEventListener("click", function (e) {
   e.preventDefault();
-
+  saveItem();
   addItem();
   modalClose.click();
-  //   console.log(description.value);
-  //   console.log(select.value);
-  //   priority();
-  //   console.log(priority()[0]);
-  //   console.log(priority()[1]);
-
-  //   if (radioHigh.checked) {
-  //     console.log(radioHigh.id);
-  //   } else if (radioMid.checked) {
-  //     console.log(radioMid.id);
-  //   } else if (radioLow.checked) {
-  //     console.log(radioLow.id);
-  //   }
 });
+
+// const object = `
+// <div class="row mb-3 ml-1">
+//     <div class="list-item ${priority()[0]} col col-sm-11" data-id="${
+//   priority()[1]
+// }">
+//         <h5 class="item-name" data-name="${select.value}">${select.value}:</h5>
+//         <p class="item">
+//           ${description.value} <br />
+//           <span
+//             class="small-text date"
+//             >${currentDate()}</span>
+//         </p>
+//     </div>
+//     <button data-name="remove" class="btn col col-sm-1 bg-dark text-white">X</button>
+// </div>
+// `;
+// const jsonObt = JSON.stringify(object);
+// console.log(jsonObt);
+
+// const htmlEl = JSON.parse(jsonObt);
+// console.log(htmlEl);

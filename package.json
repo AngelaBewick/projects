@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/AngelaBewick/projects/issues"
   },
-  "homepage": "https://github.com/AngelaBewick/projects#readme"
+  "homepage": "https://github.com/AngelaBewick/projects#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3"
+  }
 }
