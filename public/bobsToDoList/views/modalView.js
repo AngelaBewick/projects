@@ -66,9 +66,11 @@ const saveItem = async function () {
         description: `${description.value}`,
       }),
     }
-  ).then((data) => {
-    console.log(data);
-  });
+  )
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => console.log(error));
 };
 export const addItem = function () {
   mainContainer.insertAdjacentHTML(
