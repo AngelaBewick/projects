@@ -37,46 +37,43 @@ const priority = function () {
   return priorityArr;
 };
 
-const saveItem = async function () {
-  await fetch("https://angela-bewicks-api.onrender.com/api/v1")
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+// const saveItem = async function () {
 
-  // axios
-  //   .post("https://angela-bewicks-api.onrender.com", {
-  //     priority: `${priority()[0]}`,
-  //     date: `${currentDate()}`,
-  //     type: `${select.value}`,
-  //     description: `${description.value}`,
-  //   })
-  //   .then(function (response) {
-  //     console.log(response);
-  //   })
-  //   .catch(function (error) {
-  //     console.log(error);
-  //   });
+// axios
+//   .post("https://angela-bewicks-api.onrender.com", {
+//     priority: `${priority()[0]}`,
+//     date: `${currentDate()}`,
+//     type: `${select.value}`,
+//     description: `${description.value}`,
+//   })
+//   .then(function (response) {
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
 
-  //   const response = await fetch(
-  //     "https://angela-bewicks-api.onrender.com/api/v1",
-  //     {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json;charset=utf-8",
-  //       },
+//   const response = await fetch(
+//     "https://angela-bewicks-api.onrender.com/api/v1",
+//     {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json;charset=utf-8",
+//       },
 
-  //       body: JSON.stringify({
-  //         priority: `${priority()[0]}`,
-  //         date: `${currentDate()}`,
-  //         type: `${select.value}`,
-  //         description: `${description.value}`,
-  //       }),
-  //     }
-  //   )
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => console.log(error));
-};
+//       body: JSON.stringify({
+//         priority: `${priority()[0]}`,
+//         date: `${currentDate()}`,
+//         type: `${select.value}`,
+//         description: `${description.value}`,
+//       }),
+//     }
+//   )
+//     .then((response) => {
+//       console.log(response);
+//     })
+//     .catch((error) => console.log(error));
+// };
 export const addItem = function () {
   mainContainer.insertAdjacentHTML(
     "afterbegin",
@@ -103,7 +100,7 @@ export const addItem = function () {
 
 modalSubmit.addEventListener("click", function (e) {
   e.preventDefault();
-  saveItem();
+  // saveItem();
   addItem();
   modalClose.click();
 });
