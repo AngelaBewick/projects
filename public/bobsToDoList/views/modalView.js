@@ -38,6 +38,10 @@ const priority = function () {
 };
 
 const saveItem = async function () {
+  await fetch("https://angela-bewicks-api.onrender.com/api/v1")
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+
   // axios
   //   .post("https://angela-bewicks-api.onrender.com", {
   //     priority: `${priority()[0]}`,
@@ -52,25 +56,26 @@ const saveItem = async function () {
   //     console.log(error);
   //   });
 
-  const response = await fetch(
-    "https://angela-bewicks-api.onrender.com/api/v1",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify({
-        priority: `${priority()[0]}`,
-        date: `${currentDate()}`,
-        type: `${select.value}`,
-        description: `${description.value}`,
-      }),
-    }
-  )
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => console.log(error));
+  //   const response = await fetch(
+  //     "https://angela-bewicks-api.onrender.com/api/v1",
+  //     {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json;charset=utf-8",
+  //       },
+
+  //       body: JSON.stringify({
+  //         priority: `${priority()[0]}`,
+  //         date: `${currentDate()}`,
+  //         type: `${select.value}`,
+  //         description: `${description.value}`,
+  //       }),
+  //     }
+  //   )
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((error) => console.log(error));
 };
 export const addItem = function () {
   mainContainer.insertAdjacentHTML(
