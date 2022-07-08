@@ -5,7 +5,7 @@ const img = "images/books-tea.jfif";
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 export const displayData = function (data) {
   let count = 0;
-  console.log(data);
+  // console.log(data);
   data.forEach((element) => {
     searchDisplay.insertAdjacentHTML(
       "beforeend",

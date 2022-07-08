@@ -36,7 +36,7 @@ const priority = function () {
   return priorityArr;
 };
 
-const saveItem = async function () {
+const addItem = async function () {
   const requestOptions = {
     priority: `${priority()[0]}`,
     date: `${currentDate()}`,
@@ -55,15 +55,13 @@ const saveItem = async function () {
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  const data = response.json();
+  const data = await response.json();
   console.log(data);
-};
 
-export const addItem = function () {
   mainContainer.insertAdjacentHTML(
     "afterbegin",
     `
-    <div class="row mb-3 ml-1">
+    <div id="${data}" class="row mb-3 ml-1">
         <div class="list-item ${priority()[0]} col col-sm-11" data-id="${
       priority()[1]
     }">
@@ -85,7 +83,7 @@ export const addItem = function () {
 
 modalSubmit.addEventListener("click", function (e) {
   e.preventDefault();
-  saveItem();
+  // saveItem();
   addItem();
   modalClose.click();
 });

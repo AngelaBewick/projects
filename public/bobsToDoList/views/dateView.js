@@ -22,7 +22,7 @@ export const dateOld = function () {
 
   sortDOM.forEach((elem) => {
     let domString = elem.closest(".row").outerHTML;
-    console.log(elem.closest(".row").outerHTML);
+    // console.log(elem.closest(".row").outerHTML);
     mainContainer.insertAdjacentHTML("beforeend", domString);
   });
 };
@@ -40,7 +40,7 @@ export const dateNew = function () {
 
   sortDOM.forEach((elem) => {
     let domString = elem.closest(".row").outerHTML;
-    console.log(elem.closest(".row").outerHTML);
+    // console.log(elem.closest(".row").outerHTML);
     mainContainer.insertAdjacentHTML("beforeend", domString);
   });
 };

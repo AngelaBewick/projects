@@ -30,7 +30,7 @@ const search = async function (bookSearch) {
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-  console.log(query.value);
+  // console.log(query.value);
   search(query.value);
   query.value = "";
 });
