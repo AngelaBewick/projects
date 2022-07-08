@@ -1,4 +1,3 @@
-// const axios = require("axios");
 const description = document.querySelector("#item-description");
 const select = document.querySelector("#item-type");
 const radioHigh = document.querySelector("#high-priority");
@@ -39,20 +38,7 @@ const priority = function () {
 
 // const saveItem = async function () {
 
-// axios
-//   .post("https://angela-bewicks-api.onrender.com", {
-//     priority: `${priority()[0]}`,
-//     date: `${currentDate()}`,
-//     type: `${select.value}`,
-//     description: `${description.value}`,
-//   })
-//   .then(function (response) {
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
-
+//
 //   const response = await fetch(
 //     "https://angela-bewicks-api.onrender.com/api/v1",
 //     {
