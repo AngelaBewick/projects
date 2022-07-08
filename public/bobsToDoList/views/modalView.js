@@ -19,7 +19,7 @@ const currentDate = function () {
   let date = `${month.toString().padStart(2, 0)}.${day
     .toString()
     .padStart(2, 0)}.${year}`;
-  console.log(date);
+  // console.log(date);
   return date;
 };
 currentDate();
@@ -36,30 +36,29 @@ const priority = function () {
   return priorityArr;
 };
 
-// const saveItem = async function () {
+const saveItem = async function () {
+  const requestOptions = {
+    priority: `${priority()[0]}`,
+    date: `${currentDate()}`,
+    type: `${select.value}`,
+    description: `${description.value}`,
+  };
+  // console.log(requestOptions);
+  const response = await fetch(
+    "https://angela-bewicks-api.onrender.com/api/v1",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(requestOptions),
+    }
+  );
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const data = response.json();
+  console.log(data);
+};
 
-//
-//   const response = await fetch(
-//     "https://angela-bewicks-api.onrender.com/api/v1",
-//     {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json;charset=utf-8",
-//       },
-
-//       body: JSON.stringify({
-//         priority: `${priority()[0]}`,
-//         date: `${currentDate()}`,
-//         type: `${select.value}`,
-//         description: `${description.value}`,
-//       }),
-//     }
-//   )
-//     .then((response) => {
-//       console.log(response);
-//     })
-//     .catch((error) => console.log(error));
-// };
 export const addItem = function () {
   mainContainer.insertAdjacentHTML(
     "afterbegin",
@@ -86,7 +85,7 @@ export const addItem = function () {
 
 modalSubmit.addEventListener("click", function (e) {
   e.preventDefault();
-  // saveItem();
+  saveItem();
   addItem();
   modalClose.click();
 });
