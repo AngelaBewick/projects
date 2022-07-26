@@ -1,17 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Angela's Projects</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1>Angela's Projects</h1>
-    <div>
-      <h3>Reading List</h3>
-      <a href="./readingList">Link</a>
-    </div>
-    <div>
-      <h3>Bob's TO-DO</h3>
-      <a href="./bobsToDoList">Link</a>
-    </div>
+    <main class="container-fluid text-bg-dark p-3 h-100">
+      <div class="text-center">
+        <h1 class="fw-bolder">Angela's Projects</h1>
+        <img
+          class="rounded"
+          style="width: 220px"
+          src="./images/profileImage.jpg"
+        />
+        <div class="container-sm">
+          <p>
+            <small class="fw-lighter fst-italic"
+              >I am a former mathematics teacher seeking an opportunity to make
+              a career switch into technology. With the guidance of established
+              web developers in my network, I am self-teaching current and
+              relevant technologies based on their experience and
+              recommendations. My ultimate goal is to find a fantastic company
+              seeking a passionate employee willing to learn and
+              contribute.</small
+            ><br />
+            <small
+              >For smaller projects and large JS tutorial projects, please
+              visit: </small
+            ><br />
+            <a
+              class="link-info"
+              href="https://angelabewick.github.io/"
+              target="_blank"
+              >https://angelabewick.github.io/</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="container-sm text-bg-secondary p-5">
+        <a href="./bobsToDoList" target="_blank"
+          ><h1 class="text-center">Bob's TO-DO</h1></a
+        >
+        <div class="text-center">
+          <img
+            class="rounded m-3"
+            src="./images/quinlan.jfif"
+            alt="Example ToDo: Google Bobiverse Quinlan"
+          />
+        </div>
+        <p>
+          This is a full stack application. <br />I built the frontend using
+          html, css, bootstrap, and javascript and it is hosted with
+          <a href="https://console.firebase.google.com/" target="_blank"
+            >Firebase</a
+          >. I then built an a backend using node.js, express, and SQL queries.
+          My api is hosted on
+          <a href="https://render.com/" target="_blank">Render</a> and my
+          database is hosted on
+          <a href="https://www.phpmyadmin.net/" target="_blank"> phpMyAdmin</a>
+          (MySQL).
+        </p>
+        <p>
+          Users can create a new todo item by clicking the TODO button at the
+          top. Users can also delete todo items by clicking the X next to each
+          item. <br />
+          All todo items are required to have a description, type and priority.
+          Users can then sort their todo items by priority, type or date.
+        </p>
+        <p>
+          At the moment this is only for the purpose of gaining experience in
+          full stack development and is not set up for multiple clients.<br />
+          In the future I hope to add a login and authentication for each user.
+          Then in my database I can differentiate one users items from anothers
+          and each user will see only their items. I also hope to add an update
+          feature for todo items so that users can update the priority of an
+          item as they continue to procrastinate.
+        </p>
+        <p>
+          Bob's TODO List is inspired by the Bobiverse series by Dennis E Taylor
+          (recommend!).
+        </p>
+      </div>
+      <div class="container-sm text-bg-secondary p-3 my-5">
+        <a href="./readingList" target="_blank">
+          <h1 class="text-center">Reading List</h1></a
+        >
+        <div class="text-center">
+          <img
+            class="rounded m-3"
+            src="./images/open-book.png"
+            alt="Example ToDo: Google Bobiverse Quinlan"
+          />
+        </div>
+        <p>
+          The front end of this app uses html, css, and javascript and it is
+          hosted with
+          <a href="https://console.firebase.google.com/" target="_blank"
+            >Firebase</a
+          >. When the user searches for a book title, the app makes a call to
+          the
+          <a
+            href="https://developers.google.com/books/docs/v1/getting_started?csw=1"
+            target="_blank"
+          >
+            Google Books API</a
+          >
+          using async/await and fetch then displays the title, author, and a
+          description. The user can then add a book to the reading list. Books
+          on the reading list can be marked "finished" or be removed.
+        </p>
+        <p>
+          At the moment this app has no data persistance. I will be updating
+          this app in the future to connect to my own api in order to save a
+          user's reading list on my database. Login and authentication features
+          to follow.
+        </p>
+      </div>
+    </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
